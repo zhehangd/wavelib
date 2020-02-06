@@ -1,0 +1,16 @@
+@PACKAGE_INIT@
+
+include("${CMAKE_CURRENT_LIST_DIR}/wavelib.cmake")
+
+set(wavelib_VERSION_MAJOR "@wavelib_VERSION_MAJOR@")
+set(wavelib_VERSION_MINOR "@wavelib_VERSION_MINOR@")
+set(wavelib_VERSION_PATCH "@wavelib_VERSION_PATCH@")
+
+set_and_check(wavelib_INCLUDE_DIR "@PACKAGE_INCLUDE_INSTALL_DIR@")
+set(wavelib_LIBRARY wavelib::libwavelib)
+
+set(wavelib_INCLUDE_DIRS ${wavelib_INCLUDE_DIR})
+set(wavelib_LIBRARIES ${wavelib_LIBRARY})
+message(STATUS "Found wavelib   (include: ${wavelib_INCLUDE_DIR}, library: ${wavelib_LIBRARY})")
+
+# https://archive.fosdem.org/2013/schedule/event/moderncmake/attachments/slides/258/export/events/attachments/moderncmake/slides/258/cmake_fosdem_2013.pdf

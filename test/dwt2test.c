@@ -3,7 +3,7 @@
 #include <string.h>
 #include <math.h>
 #include <time.h>
-#include "../header/wavelib.h"
+#include "wavelib/wavelib.h"
 
 double absmax(double *array, int N) {
 	double max;

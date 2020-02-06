@@ -3,7 +3,7 @@
 #include <string.h>
 #include <math.h>
 
-#include "../header/wauxlib.h"
+#include "wavelib/wauxlib.h"
 
 static double rmse(int N,double *x,double *y) {
 	double rms;
@@ -47,7 +47,7 @@ static double corrcoef(int N,double *x,double *y) {
 }
 
 int main() {
-	// gcc -Wall -I../header -L../Bin denoisetest.c -o denoise -lwauxlib -lwavelib -lm
+	// gcc -Wall -Iwavelib -L../Bin denoisetest.c -o denoise -lwauxlib -lwavelib -lm
 	double *sig,*inp,*oup;
 	int i,N,J;
 	FILE *ifp;

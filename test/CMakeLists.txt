@@ -1,46 +1,46 @@
 add_executable(cwttest cwttest.c)
 
-target_link_libraries(cwttest wavelib)
+target_link_libraries(cwttest libwavelib)
 
 add_executable(dwttest dwttest.c)
 
-target_link_libraries(dwttest wavelib)
+target_link_libraries(dwttest libwavelib)
 
 add_executable(swttest swttest.c)
 
-target_link_libraries(swttest wavelib)
+target_link_libraries(swttest libwavelib)
 
 add_executable(modwttest modwttest.c)
 
-target_link_libraries(modwttest wavelib)
+target_link_libraries(modwttest libwavelib)
 
 add_executable(dwpttest dwpttest.c)
 
-target_link_libraries(dwpttest wavelib)
+target_link_libraries(dwpttest libwavelib)
 
 add_executable(wtreetest wtreetest.c)
 
-target_link_libraries(wtreetest wavelib)
+target_link_libraries(wtreetest libwavelib)
 
 add_executable(denoisetest denoisetest.c)
 
-target_link_libraries(denoisetest wauxlib wavelib)
+target_link_libraries(denoisetest wauxlib libwavelib)
 
 add_executable(modwtdenoisetest modwtdenoisetest.c)
 
-target_link_libraries(modwtdenoisetest wauxlib wavelib)
+target_link_libraries(modwtdenoisetest wauxlib libwavelib)
 
 add_executable(dwt2test dwt2test.c)
 
-target_link_libraries(dwt2test wavelib)
+target_link_libraries(dwt2test libwavelib)
 
 add_executable(swt2test swt2test.c)
 
-target_link_libraries(swt2test wavelib)
+target_link_libraries(swt2test libwavelib)
 
 add_executable(modwt2test modwt2test.c)
 
-target_link_libraries(modwt2test wavelib)
+target_link_libraries(modwt2test libwavelib)
 
 if(UNIX)
 	target_link_libraries(cwttest m)

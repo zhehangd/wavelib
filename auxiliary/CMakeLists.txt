@@ -8,7 +8,7 @@ set(HEADER_FILES waux.h)
 
 add_library(wauxlib STATIC ${SOURCE_FILES} ${HEADER_FILES})
 
-target_link_libraries(wauxlib wavelib)
+target_link_libraries(wauxlib libwavelib)
 
 set_property(TARGET wauxlib PROPERTY FOLDER "lib")
 

@@ -3,7 +3,7 @@
 #include <string.h>
 #include <math.h>
 
-#include "../header/wauxlib.h"
+#include "wavelib/wauxlib.h"
 
 static double rmse(int N,double *x,double *y) {
 	double rms;
@@ -47,7 +47,7 @@ static double corrcoef(int N,double *x,double *y) {
 }
 
 int main() {
-	// gcc -Wall -I../header -L../Bin modwtdenoisetest.c -o modwtdenoise -lwauxlib -lwavelib -lm
+	// gcc -Wall -Iwavelib -L../Bin modwtdenoisetest.c -o modwtdenoise -lwauxlib -lwavelib -lm
     /*
     modwtshrink can also be called from the denoise object. See denoisetest.c for more information
     */

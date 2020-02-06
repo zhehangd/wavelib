@@ -10,7 +10,7 @@
 #include <cstdlib>
 #include <cstring>
 
-#include "../../header/wavelib.h"
+#include "wavelib/wavelib.h"
 
 #include<vector>
 

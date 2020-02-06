@@ -1,31 +1,33 @@
+set(SOURCE_FILES
+  conv.c
+  cwt.c
+  cwtmath.c
+  hsfft.c
+  real.c
+  wavefilt.c
+  wavefunc.c
+  wavelib.c
+  wtmath.c
+)
 
+set(EXT_HEADER_FILES
+  ../include/wavelib/wauxlib.h
+  ../include/wavelib/wavelib.h
+)
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR})
+add_library(libwavelib STATIC ${SOURCE_FILES})
 
-set(SOURCE_FILES    conv.c
-					cwt.c
-					cwtmath.c
-					hsfft.c
-					real.c
-					wavefilt.c
-					wavefunc.c
-					wavelib.c
-					wtmath.c
-                    )
+target_include_directories(libwavelib PUBLIC
+  $<BUILD_INTERFACE:${PROJECT_WIDE_INCLUDE}>
+  $<INSTALL_INTERFACE:include>
+)
 
-set(HEADER_FILES    conv.h
-					cwt.h
-					cwtmath.h
-					hsfft.h
-					real.h
-					wavefilt.h
-					wavefunc.h
-					wtmath.h
-                    )
+install(TARGETS libwavelib
+  EXPORT wavelib
+  LIBRARY DESTINATION lib
+  INCLUDES DESTINATION include
+)
 
-add_library(wavelib STATIC ${SOURCE_FILES} ${HEADER_FILES})
-        
-set_property(TARGET wavelib PROPERTY FOLDER "lib")
-
-target_include_directories(wavelib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}../header)
-
+install(FILES ${EXT_HEADER_FILES}
+  DESTINATION include/wavelib
+)
